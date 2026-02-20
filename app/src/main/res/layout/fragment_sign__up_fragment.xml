@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Sign_In_Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/sign_up_logo"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Thousands Managing Their Finances Effortlessly"
+            android:fontFamily="sans-serif"
+            android:textSize="14sp"
+            android:textColor="#747880"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:startIconDrawable="@drawable/profile"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="#00754E"
+            app:boxBackgroundColor="#f5f5f5"
+            app:hintTextColor="#00754e"
+            app:useMaterialThemeColors="false"
+            app:cursorColor="#808080"
+            app:endIconMode="clear_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:inputType="text"
+                android:paddingStart="50dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_gmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:startIconDrawable="@drawable/mail_logo"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="#00754E"
+            app:boxBackgroundColor="#f5f5f5"
+            app:hintTextColor="#00754e"
+            app:useMaterialThemeColors="false"
+            app:cursorColor="#808080"
+            app:endIconMode="clear_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_gmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/gmail"
+                android:inputType="text"
+                android:paddingStart="50dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:startIconDrawable="@drawable/call_logo"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="#00754E"
+            app:boxBackgroundColor="#f5f5f5"
+            app:hintTextColor="#00754e"
+            app:useMaterialThemeColors="false"
+            app:cursorColor="#808080"
+            app:endIconMode="clear_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:paddingStart="50dp"
+                android:maxLength="10"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:startIconDrawable="@drawable/location"
+            android:layout_marginTop="10dp"
+            app:boxStrokeColor="#00754E"
+            app:boxBackgroundColor="#f5f5f5"
+            app:hintTextColor="#00754e"
+            app:useMaterialThemeColors="false"
+            app:cursorColor="#808080"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Home Address"
+                android:inputType="text"
+                android:maxLength="50"
+                android:paddingStart="50dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/password_logo"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="#00754E"
+            app:boxBackgroundColor="#f5f5f5"
+            app:hintTextColor="#00754e"
+            app:useMaterialThemeColors="false"
+            app:cursorColor="#808080">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingStart="50dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/password_logo"
+            android:layout_marginTop="8dp"
+            app:boxStrokeColor="#00754E"
+            app:boxBackgroundColor="#f5f5f5"
+            app:hintTextColor="#00754e"
+            app:useMaterialThemeColors="false"
+            app:cursorColor="#808080">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:paddingStart="50dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkboxRemember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Clicking Continue I Have Read And Agree With The"
+            android:layout_gravity="start"
+            android:shadowColor="#808080"
+            app:buttonTint="@color/checkbox_fill_color"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/terms_policies_signup"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_sheet_privacy_policy"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_gravity="start"
+            android:layout_marginTop="-40dp"
+            android:paddingStart="5dp"
+            android:layout_marginLeft="60dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg_color"
+            android:text="Continue"
+            android:textSize="17sp"
+            app:backgroundTint="@null"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/have_an_account"
+                android:textSize="12sp"
+                android:textColor="#8a8787"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/SignInBTN"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_in"
+                android:textColor="#000000"
+                android:layout_gravity="start"
+                android:paddingStart="-15dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

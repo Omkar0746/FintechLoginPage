@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#00754e</color>
+    <color name="trackColorGrey">#f2f0f0</color>
+    <color name="trackColorGreen">#c2edcc</color>
+    <color name="thumbColorWhite">#FFFFFF</color>
+    <color name="thumbColorGreen">#00754E</color>
+
+</resources>

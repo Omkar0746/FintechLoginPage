@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FintechLoginPage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_to_access_your_subcriptions_and_spending_insights">Sign In To Access Your Subcriptions And Spending \nInsights</string>
+    <string name="gmail">Gmail</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="terms_sheet_privacy_policy">Terms Sheet, Privacy Policy</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_apple">Sign in with Apple</string>
+    <string name="don_t_have_an_account">Don\'t Have An Account?</string>
+    <string name="by_clicking_sign_in_i_have_read_and_agree_with_the">By Clicking Sign In I Have Read And Agree With The</string>
+    <string name="create_account">Create Account</string>
+    <string name="or">Or</string>
+    <string name="birthday">Birthday</string>
+    <string name="finish_setup">Finish Setup</string>
+    <string name="track_type">Track Type</string>
+    <string name="notifications">Notifications</string>
+    <string name="tell_us_about_you_for_peronalized_insights">Tell Us About You For Peronalized Insights</string>
+    <string name="complete_your_setup">Complete Your SetUp</string>
+    <string name="input_profile_image">input_profile_image</string>
+    <string name="have_an_account">Have An Account?</string>
+    <string name="successfully_login">Successfully \nLogin</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="select_currency">Select Currency</string>
+</resources>
