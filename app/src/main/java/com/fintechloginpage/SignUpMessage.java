@@ -69,11 +69,8 @@ public class SignUpMessage extends Fragment {
         return inflater.inflate(R.layout.fragment_sign_up_message, container, false);
     }
 
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 }

@@ -1,4 +1,4 @@
-package com.fintechloginpage;
+package com.fintechloginpage.activity;
 
 import android.os.Bundle;
 
@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.fintechloginpage.R;
+import com.fintechloginpage.Sign_In_Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main, new Sign_In_Fragment())
+                    .replace(R.id.frameLayout, new Sign_In_Fragment())
                     .addToBackStack(null)
                     .commit();
         }

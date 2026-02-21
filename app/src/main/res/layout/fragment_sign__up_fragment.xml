@@ -29,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:textSize="30sp"
             android:textColor="#000"
             android:textStyle="bold"
@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Join Thousands Managing Their Finances Effortlessly"
+            android:text="@string/join_thousands_managing_their_finances_effortlessly"
             android:fontFamily="sans-serif"
             android:textSize="14sp"
             android:textColor="#747880"

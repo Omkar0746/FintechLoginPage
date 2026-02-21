@@ -1,19 +1,23 @@
-package com.fintechloginpage;
+package com.fintechloginpage.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fintechloginpage.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MessagePage#newInstance} factory method to
+ * Use the {@link MessagePageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MessagePage extends Fragment {
+public class MessagePageFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +28,7 @@ public class MessagePage extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MessagePage() {
+    public MessagePageFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +41,8 @@ public class MessagePage extends Fragment {
      * @return A new instance of fragment MessagePage.
      */
     // TODO: Rename and change types and number of parameters
-    public static MessagePage newInstance(String param1, String param2) {
-        MessagePage fragment = new MessagePage();
+    public static MessagePageFragment newInstance(String param1, String param2) {
+        MessagePageFragment fragment = new MessagePageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,5 +64,10 @@ public class MessagePage extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_message_page, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.fintechloginpage.Fragment.set_up_screen;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
@@ -73,8 +74,8 @@ public class Sign_Up_fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_sign__up_fragment, container, false);
     }
 
-    private TextInputLayout nameLayout, gmailLayout,phonelayout, homeLayout, passwordLayout, confirmPasswordLayout;
-    private TextInputEditText editTextName, editTextGmail,editTextPhone, editTextHome, editTextPassword, editTextConfirmPassword;
+    private TextInputLayout nameLayout, gmailLayout, phoneLayout, homeLayout, passwordLayout, confirmPasswordLayout;
+    private TextInputEditText editTextName, editTextGmail, editTextPhone, editTextHome, editTextPassword, editTextConfirmPassword;
     MaterialCheckBox rememberCheck;
     Boolean isAllFieldChecked;
     @Override
@@ -89,7 +90,7 @@ public class Sign_Up_fragment extends Fragment {
 
         nameLayout = view.findViewById(R.id.layout_name);
         gmailLayout = view.findViewById(R.id.layout_gmail);
-        phonelayout = view.findViewById(R.id.layout_phone);
+        phoneLayout = view.findViewById(R.id.layout_phone);
         homeLayout = view.findViewById(R.id.layout_address);
         passwordLayout = view.findViewById(R.id.layout_password);
         confirmPasswordLayout = view.findViewById(R.id.layout_confirm_password);
@@ -110,13 +111,15 @@ public class Sign_Up_fragment extends Fragment {
             public void onClick(View view) {
                 isAllFieldChecked = validateFields();
                 if(isAllFieldChecked){
-                    clearForm();
+
                     Fragment messageFragment = new set_up_screen();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.main, messageFragment)
+                            .replace(R.id.frameLayout, messageFragment)
                             .addToBackStack(null)
                             .commit();
+
+                    clearForm();
                 }
             }
         });
@@ -129,14 +132,14 @@ public class Sign_Up_fragment extends Fragment {
                 Fragment backSignInPage = new Sign_In_Fragment();
                 requireActivity().getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main, backSignInPage)
+                        .replace(R.id.frameLayout, backSignInPage)
                         .addToBackStack(null)
                         .commit();
             }
         });
         clearErrorOnTyping(editTextName, nameLayout);
         clearErrorOnTyping(editTextGmail, gmailLayout);
-        clearErrorOnTyping(editTextPhone, phonelayout);
+        clearErrorOnTyping(editTextPhone, phoneLayout);
         clearErrorOnTyping(editTextHome, homeLayout);
         clearErrorOnTyping(editTextPassword, passwordLayout);
         clearErrorOnTyping(editTextConfirmPassword, confirmPasswordLayout);
@@ -168,7 +171,7 @@ public class Sign_Up_fragment extends Fragment {
 
         if(name.isEmpty()){
             editTextName.requestFocus();
-            editTextName.setError("Required to fil field");
+            editTextName.setError("Required to fill field");
             return false;
         }else {
             nameLayout.setError(null);
@@ -195,7 +198,7 @@ public class Sign_Up_fragment extends Fragment {
             editTextPhone.setError("Enter valid phone number");
             return false;
         } else{
-            phonelayout.setError(null);
+            phoneLayout.setError(null);
         }
 
         if(home.isEmpty()){

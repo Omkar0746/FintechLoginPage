@@ -1,7 +1,6 @@
-package com.fintechloginpage;
+package com.fintechloginpage.Fragment;
 
 import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -24,12 +23,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
+import com.fintechloginpage.R;
+import com.fintechloginpage.SignUpMessage;
+import com.fintechloginpage.Sign_In_Fragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.datepicker.CalendarConstraints;
@@ -39,7 +35,6 @@ import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -143,7 +138,7 @@ public class set_up_screen extends Fragment {
                     Fragment messageScreen = new SignUpMessage();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.main, messageScreen)
+                            .replace(R.id.frameLayout, messageScreen)
                             .addToBackStack(null)
                             .commit();
                 }
@@ -156,7 +151,7 @@ public class set_up_screen extends Fragment {
                 Fragment backToSignIn = new Sign_In_Fragment();
                 requireActivity().getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main, backToSignIn)
+                        .replace(R.id.frameLayout, backToSignIn)
                         .addToBackStack(null)
                         .commit();
             }
@@ -349,7 +344,6 @@ public class set_up_screen extends Fragment {
         }else {
             rememberCheck.setError(null);
         }
-
         return true;
     }
 
@@ -358,5 +352,4 @@ public class set_up_screen extends Fragment {
         currencyMenu.setText("");
         rememberCheck.setChecked(false);
     }
-
 }

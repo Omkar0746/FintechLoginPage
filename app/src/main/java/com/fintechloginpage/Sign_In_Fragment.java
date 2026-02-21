@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
@@ -14,12 +13,9 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fintechloginpage.Fragment.MessagePageFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
@@ -110,10 +106,10 @@ public class Sign_In_Fragment extends Fragment {
                 isAllFieldChecked = validateFields();
                 if(isAllFieldChecked){
                     clearForm();
-                    Fragment messageFragment = new MessagePage();
+                    Fragment messageFragment = new MessagePageFragment();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.main, messageFragment)
+                            .replace(R.id.frameLayout, messageFragment)
                             .addToBackStack(null)
                             .commit();
                 }
@@ -124,10 +120,10 @@ public class Sign_In_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d("Sign_In_Fragment","Register Btn Clicked");
-                Fragment newSignUpPage = new Sign_Up_fragment();
+                Fragment SignUpPage = new Sign_Up_fragment();
                 requireActivity().getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.main, newSignUpPage)
+                        .replace(R.id.frameLayout, SignUpPage)
                         .addToBackStack(null)
                         .commit();
             }
@@ -196,6 +192,5 @@ public class Sign_In_Fragment extends Fragment {
         editTextGmail.setText("");
         editTextPassword.setText("");
         rememberCheck.setChecked(false);
-
     }
 }
