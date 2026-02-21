@@ -15,11 +15,6 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SignUpMessage#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SignUpMessage extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
