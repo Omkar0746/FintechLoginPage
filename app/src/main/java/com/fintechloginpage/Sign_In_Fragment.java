@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.fintechloginpage.Fragment.MessagePageFragment;
+import com.fintechloginpage.Fragment.MessagePage;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
@@ -106,7 +106,7 @@ public class Sign_In_Fragment extends Fragment {
                 isAllFieldChecked = validateFields();
                 if(isAllFieldChecked){
                     clearForm();
-                    Fragment messageFragment = new MessagePageFragment();
+                    Fragment messageFragment = new MessagePage();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.frameLayout, messageFragment)
