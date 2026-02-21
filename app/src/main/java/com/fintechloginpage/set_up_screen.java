@@ -1,6 +1,7 @@
 package com.fintechloginpage;
 
 import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -10,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -21,11 +24,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -96,17 +106,10 @@ public class set_up_screen extends Fragment {
     Boolean isAllFieldChecked;
     AutoCompleteTextView currencyMenu;
     MaterialSwitch subscription, expense, pushAlert;
+    CircularProgressIndicator profileImageLoader;
 
     private ImageView profileImage;
     private ImageButton uploadButton;
-
-    private final ActivityResultLauncher<String> imagePickerLauncher =
-            registerForActivityResult(new ActivityResultContracts.GetContent(),
-                    uri -> {
-                        if (uri != null) {
-                            profileImage.setImageURI(uri);
-                        }
-                    });
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -129,19 +132,20 @@ public class set_up_screen extends Fragment {
 
         profileImage = view.findViewById(R.id.profileImage);
         uploadButton = view.findViewById(R.id.uploadButton);
+        profileImageLoader = view.findViewById(R.id.profileImageLoadingIndicator);
 
         finishSetUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 isAllFieldChecked = validateFields();
                 if(isAllFieldChecked){
+                    clearForm();
                     Fragment messageScreen = new SignUpMessage();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main, messageScreen)
                             .addToBackStack(null)
                             .commit();
-                    clearForm();
                 }
             }
         });
@@ -286,6 +290,18 @@ public class set_up_screen extends Fragment {
         //Text Watcher
         clearErrorOnTyping(editTextBirthday, birthday_layout);
     }
+
+    private final ActivityResultLauncher<String> imagePickerLauncher =
+            registerForActivityResult(new ActivityResultContracts.GetContent(),
+                    uri -> {
+                        if (uri != null) {
+                            profileImageLoader.setVisibility(View.VISIBLE);
+                            new Handler(Looper.getMainLooper()).postDelayed(() ->{
+                                profileImageLoader.setVisibility(View.GONE);
+                                profileImage.setImageURI(uri);
+                            },500);
+                        }
+                    });
 
     private void clearErrorOnTyping(TextInputEditText editText, TextInputLayout layout) {
 

@@ -109,13 +109,13 @@ public class Sign_In_Fragment extends Fragment {
             public void onClick(View view) {
                 isAllFieldChecked = validateFields();
                 if(isAllFieldChecked){
+                    clearForm();
                     Fragment messageFragment = new MessagePage();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main, messageFragment)
                             .addToBackStack(null)
                             .commit();
-                    clearForm();
                 }
             }
         });

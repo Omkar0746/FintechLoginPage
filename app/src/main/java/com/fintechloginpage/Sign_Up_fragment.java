@@ -110,14 +110,13 @@ public class Sign_Up_fragment extends Fragment {
             public void onClick(View view) {
                 isAllFieldChecked = validateFields();
                 if(isAllFieldChecked){
-
+                    clearForm();
                     Fragment messageFragment = new set_up_screen();
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.main, messageFragment)
                             .addToBackStack(null)
                             .commit();
-                    clearForm();
                 }
             }
         });
