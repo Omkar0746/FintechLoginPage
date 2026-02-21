@@ -28,4 +28,5 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="select_currency">Select Currency</string>
     <string name="join_thousands_managing_their_finances_effortlessly">Join Thousands Managing Their Finances Effortlessly</string>
+    <string name="address">Address</string>
 </resources>
